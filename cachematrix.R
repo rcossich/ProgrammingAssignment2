@@ -2,13 +2,12 @@
 ## functions do
 ## Commented by Ricardo Cossich 2014-04-22 21:05 (GMT -6)
 ## Function makeCacheMatrix creates a special object
-## that receives a matrix and calculates its inverse matrix
-## this function allows to get the matrix value, set this value
-## and also calculate and set the inverse matrix
-## when calculating the inverse matrix this function saves a copy
-## of the solution, and when called again verifies if the saved
-## solution is not null and does not perform the calculation
-## but returns the saved value (cache)
+## that receives a matrix and provides methods to perform
+## the following actions:
+## (1) set a new value for the matrix
+## (2) get the matrix value
+## (3) set the value of the inverse matrix (manual call)
+## (4) get the value of the stored inverse matrix
 
 ## Write a short comment describing this function
 
@@ -28,7 +27,13 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## Write a short comment describing this function
-
+## commented by Ricardo Cossich 2014-04-22 09:20 (-6 GMT)
+## This function uses the object created by makeCacheMatrix
+## to check if a solution (inverse matrix), has been saved into
+## the object structure, if so, it returns this value and echoes
+## than the returned value is the cached one,
+## otherwise it performs the calculation and stores it within
+## the object (if matrix is not invertible it sends a message)
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
   inverse_matrix <- x$getsolve()  ## get the cached solution
