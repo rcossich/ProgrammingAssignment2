@@ -20,7 +20,7 @@ makeCacheMatrix <- function(x = matrix()) {
   get <- function() x  ## returns matrix inside the object
   setsolve <- function(solve) i <<- solve ## to assign a solve variable within the object
   getsolve <- function() i  ## returns the inverse matrix in the object
-  list(set = set, get = get,  ## creating the list
+  list(set = set, get = get,  ## creating the list for future references
        setsolve = setsolve,
        getsolve = getsolve)
 }
